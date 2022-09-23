@@ -5,10 +5,8 @@ public:
     int concatenatedBinary(int n) {
         long long ans = 0;
         for(int i=1;i<=n;i++){
-            ans <<= ((int)log2(i)+1);
-            ans %= m;
-            ans += i;
-            ans %= m;
+            int len = (int)log2(i)+1; 
+            ans = ((ans<<len)%m + i)%m;
         }
         return (int)ans%m;
     }
