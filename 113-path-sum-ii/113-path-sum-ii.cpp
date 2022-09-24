@@ -18,14 +18,12 @@ public:
             dp.push_back(d);
             d.pop_back();
         }
-        if(root!=NULL){
-            d.push_back(root->val);
-            if(root->left) calculatesum(root->left, sum-root->val, d);
-            d.pop_back();
-            d.push_back(root->val);
-            if(root->right) calculatesum(root->right, sum-root->val, d);
-            d.pop_back();
-        }
+        d.push_back(root->val);
+        if(root->left) calculatesum(root->left, sum-root->val, d);
+        d.pop_back();
+        d.push_back(root->val);
+        if(root->right) calculatesum(root->right, sum-root->val, d);
+        d.pop_back();
     }
     
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
