@@ -11,7 +11,6 @@
  */
 class Solution {
 public:
-    int c=0;
     vector<vector<int>> dp;
     void calculatesum(TreeNode* root, int sum, vector<int> &d){
         if(sum-root->val==0 && !root->left && !root->right){
@@ -32,7 +31,6 @@ public:
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         vector<int> d;
         if(root!=NULL) calculatesum(root,targetSum,d);
-        cout<<c<<"\n";
         return dp;
     }
 };
