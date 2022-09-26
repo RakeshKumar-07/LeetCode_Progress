@@ -13,13 +13,13 @@ public:
         alpha[pa] = alpha[pb];
     }
     
-    bool equationsPossible(vector<string>& equations) {
+    bool equationsPossible(vector<string>& equations){
         for(int i=0;i<26;i++) alpha[i] = i;
         for(int i=0;i<equations.size();i++){
             if(equations[i][1] == '='){
                 int a = equations[i][0] - 97;
                 int b = equations[i][3] - 97;
-                Union(a,b);   
+                Union(a,b);
             }
         }
         for(int i=0;i<26;i++){
