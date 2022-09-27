@@ -2,7 +2,8 @@ class Solution {
 public:
     string pushDominoes(string dominoes) {
         int n = dominoes.size();
-        vector<int> right(n,INT_MAX), left(n,INT_MAX);
+        int right[100001],left[100001];
+        for(int i=0;i<100001;i++) right[i] = left[i] = INT_MAX;
         int c = INT_MIN;
         char cur = ' ';
         for(int i=0;i<n;i++){
