@@ -32,22 +32,6 @@ public:
             p->next = p->next->next;
             return head;
         }
-        // if(n==c){
-        //     p = head;
-        //     head = p->next;
-        //     return head;
-        // }
-        // else{
-        //     p = head;
-        //     ListNode* q = head->next;
-        //     int i = c-n-1;
-        //     while(i>0){
-        //         p = p->next;
-        //         q = q->next;
-        //         i--;
-        //     }
-        //     p->next = q->next;
-        // }
         return head;
     }
 };
