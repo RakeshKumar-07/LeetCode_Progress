@@ -17,22 +17,6 @@ public:
                 break;
             }
         }
-        // if(p==0){
-        //     for(int i=0;i<k;i++){
-        //         q++;
-        //         ans.push_back(arr[q]);
-        //     }
-        //     sort(ans.begin(),ans.end());
-        //     return ans;
-        // }
-        // if(q==n){
-        //     for(int i=0;i<k;i++){
-        //         p--;
-        //         ans.push_back(arr[p]);
-        //     }
-        //     sort(ans.begin(),ans.end());
-        //     return ans;
-        // }
         p--,q++;
         for(int i=0;i<k;i++){
             if( q<=n && p>=0 && abs(arr[p]-x) > abs(arr[q]-x) || p<0){
