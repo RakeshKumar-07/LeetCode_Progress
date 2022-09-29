@@ -6,12 +6,11 @@ public:
         int p,q;
         for(int i=0;i<n;i++){
             if(arr[i] >= x){
-                p = i;
                 q = i;
                 break;
             }
         }
-        p--,q;
+        p = q-1;
         for(int i=0;i<k;i++){
             if( q<=n-1 && p>=0 && abs(arr[p]-x) > abs(arr[q]-x) || p<0){
                 ans.push_back(arr[q]);  
