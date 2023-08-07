@@ -6,8 +6,8 @@ public:
         while(l<=h){
             int mid = l + (h-l)/2;
             if(matrix[mid][0] == target) return true;
-            if(matrix[mid][0] > target) h--;
-            if(matrix[mid][0] < target) l++;
+            if(matrix[mid][0] > target) h = mid -1;
+            if(matrix[mid][0] < target) l = mid + 1;
         }
         if(h==-1) return false;
         
@@ -17,8 +17,8 @@ public:
         while(l<=h){
             int mid = l + (h-l)/2;
             if(matrix[i][mid] == target) return true;
-            if(matrix[i][mid] > target) h--;
-            if(matrix[i][mid] < target) l++;
+            if(matrix[i][mid] > target) h = mid-1;
+            if(matrix[i][mid] < target) l = mid+1;
         }
 
         return false;
