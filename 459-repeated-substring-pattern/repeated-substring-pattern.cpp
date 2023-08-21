@@ -16,7 +16,6 @@ public:
                 for(int j=0;j<(s.size()/i);j++){
                     sub += temp;
                 }
-                // cout<<i<<" "<<temp<<endl;
                 if(sub == s) return true;
                 temp = s.substr(0,(s.size()/i));
                 sub = "";
