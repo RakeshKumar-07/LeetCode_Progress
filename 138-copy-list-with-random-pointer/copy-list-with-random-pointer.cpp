@@ -39,6 +39,7 @@ public:
             q = q->next;
             p = p->next;
         }
+        
         p = head;
         q = newHead;
 
