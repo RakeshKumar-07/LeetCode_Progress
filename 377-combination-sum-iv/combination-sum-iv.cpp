@@ -1,23 +1,16 @@
 class Solution {
 public:
-    int dp[1001];
-
-    int solve(int target, vector<int>& nums){
-        if(target==0){
-            return 1;
-        }
-        if(dp[target] != -1) return dp[target];
-        int res = 0;
-        for(int i=0;i<nums.size();i++){
-            if(target>=nums[i]){
-                res += solve(target-nums[i], nums);
-            }
-        }
-        return dp[target] = res;
-    }
 
     int combinationSum4(vector<int>& nums, int target) {
-        memset(dp, -1, sizeof(dp));
-        return solve(target, nums);
+        vector<unsigned> dp(target+1, 0);
+        dp[0] = 1;
+        for(int i=1;i<=target;i++){
+            for(int j=0;j<nums.size();j++){
+                if(nums[j]<=i){
+                    dp[i] += dp[i-nums[j]];
+                }
+            }
+        }
+        return dp[target];
     }
 };
