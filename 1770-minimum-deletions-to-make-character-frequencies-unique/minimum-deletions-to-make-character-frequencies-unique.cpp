@@ -14,7 +14,7 @@ public:
         }
         maxi = max(maxi, cnt);
         m[cnt].push_back(s[s.size()-1]);
-        vector<bool> vis(100000, false);
+        vector<bool> vis(s.size(), false);
         for(auto i:m) vis[i.first] = true;
         vector<int> v;
         for(int i=0;i<vis.size();i++) if(!vis[i]) v.push_back(i);
