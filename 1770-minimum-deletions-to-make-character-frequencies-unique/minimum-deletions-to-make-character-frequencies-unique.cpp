@@ -1,7 +1,6 @@
 class Solution {
 public:
     int minDeletions(string s) {
-        // cout<<s.size()<<endl;
         sort(s.begin(), s.end());
         map<int, vector<char>, greater<int>> m;
         int cnt = 1, maxi = 0;
@@ -19,18 +18,6 @@ public:
         for(auto i:m) vis[i.first] = true;
         vector<int> v;
         for(int i=0;i<vis.size();i++) if(!vis[i]) v.push_back(i);
-
-        // for(auto i:m){
-        //     cout<<i.first<<" -> ";
-        //     for(int j=0;j<i.second.size();j++){
-        //         cout<<i.second[j]<<" ";
-        //     }
-        //     cout<<endl;
-        // }
-
-        // for(int i=0;i<v.size();i++){
-        //     cout<<v[i]<<endl;
-        // }
 
         int k = v.size()-1;
         int ans = 0;
