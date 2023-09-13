@@ -1,7 +1,6 @@
 class Solution {
 public:
     int candy(vector<int>& ratings) {
-        // cout<<ratings.size()<<endl;
         int ans = ratings.size(), mini = INT_MAX;
         vector<int> rat(ratings.size(), 1);
         map<int, vector<int>> m;
