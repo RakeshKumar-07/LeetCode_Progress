@@ -5,7 +5,6 @@ public:
         int dist[10001];
         for(int i=0;i<10001;i++) dist[i] = INT_MAX;
         int n = heights.size(), m = heights[0].size();
-        // cout<<n<<" "<<m;
         priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
         pq.push({0,0,0});
         dist[0] = 0;
