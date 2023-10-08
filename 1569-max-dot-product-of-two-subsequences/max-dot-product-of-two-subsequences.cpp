@@ -9,8 +9,9 @@ public:
         if(dp[i][j] != -1) return dp[i][j];
         int t = INT_MIN;
         for(int k=j;k<m;k++){
-            t = max({t, solve(i+1, j, n, m, nums1, nums2), nums1[i]*nums2[k] + solve(i+1, k+1, n, m, nums1, nums2)});
+            t = max(t,nums1[i]*nums2[k] + solve(i+1, k+1, n, m, nums1, nums2));
         }
+        t = max(t, solve(i+1, j, n, m, nums1, nums2));
         return dp[i][j] = t;
     }
 
