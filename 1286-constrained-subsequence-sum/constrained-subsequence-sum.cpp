@@ -9,7 +9,6 @@ public:
             nums[i] = max(nums[i] + pq.top().first, nums[i]);
             pq.push({nums[i], i});
             ans = max(ans,nums[i]);
-        }
-        return ans;
+        } return ans;
     }
 };
