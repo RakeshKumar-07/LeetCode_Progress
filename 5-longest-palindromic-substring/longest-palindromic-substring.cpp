@@ -2,7 +2,6 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         string ans = "";
-        // cout<<s.size()<<endl;
         for(int i=0;i<s.size();i++){
             int p = i-1, q = i+1;
             string t = "";
