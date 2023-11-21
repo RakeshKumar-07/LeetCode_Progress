@@ -11,9 +11,7 @@ public:
                 revN.push_back(n%10);
                 n /= 10;
             }
-            while(l--){
-                newN += revN[revN.size() - l - 1]*pow(10, l);
-            }
+            while(l--) newN += revN[revN.size() - l - 1]*pow(10, l);
             rev.push_back(newN);
         }
         map<int, long long> m;
