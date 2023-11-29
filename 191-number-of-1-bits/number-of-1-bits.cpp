@@ -3,8 +3,8 @@ public:
     int hammingWeight(uint32_t n) {
         int setBitCount = 0;
         while (n != 0) {
-            n &= (n - 1);
-            ++setBitCount;
+            if(n%2 == 1) ++setBitCount;
+            n /= 2;
         }
         return setBitCount;
     }
