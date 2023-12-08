@@ -23,7 +23,7 @@ public:
         return t;
     }
     string tree2str(TreeNode* root) {
-        string ans = solve(root);
-        return ans;
+        return solve(root);
+        
     }
 };
