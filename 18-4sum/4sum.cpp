@@ -13,6 +13,7 @@ public:
                     else{
                         s.insert({nums[i],nums[j],nums[p],nums[q]});
                         p++;
+                        q--;
                     }
                 }
             }
