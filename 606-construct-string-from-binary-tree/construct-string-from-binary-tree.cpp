@@ -11,19 +11,15 @@
  */
 class Solution {
 public:
-    string solve(TreeNode* root){
+    string tree2str(TreeNode* root) {
         if(root == NULL) return "";
         string t = to_string(root->val), left = "(", right = "(";
-        if(root->left) left += solve(root->left);
+        if(root->left) left += tree2str(root->left);
         left += ")";
-        if(root->right) right += solve(root->right);
+        if(root->right) right += tree2str(root->right);
         right += ")";
         if(right.size() > 2) t += left + right;
         else if(left.size() > 2) t += left;
         return t;
-    }
-    string tree2str(TreeNode* root) {
-        return solve(root);
-        
     }
 };
