@@ -7,7 +7,7 @@ public:
         if(dp[i] != -1) return dp[i];
         int t = 0;
         if(s[i] != '0') t += solve(i+1, n, s);
-        if(i<n-1 && s[i] != '0' && stoi(s.substr(i,2)) <= 26 && stoi(s.substr(i,2)) >= 10) t+= solve(i+2, n, s);
+        if(i<n-1 && stoi(s.substr(i,2)) <= 26 && stoi(s.substr(i,2)) >= 10) t+= solve(i+2, n, s);
         return dp[i] = t;
     }
 
