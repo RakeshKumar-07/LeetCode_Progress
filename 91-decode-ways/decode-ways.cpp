@@ -2,7 +2,7 @@ class Solution {
 public:
     int dp[101];
 
-    int solve(int i, int n, string s){
+    int solve(int i, int n, string &s){
         if(i==n) return 1;
         if(dp[i] != -1) return dp[i];
         int t = 0;
