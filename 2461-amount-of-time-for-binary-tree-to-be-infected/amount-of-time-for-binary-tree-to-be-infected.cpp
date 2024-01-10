@@ -12,7 +12,7 @@
 class Solution {
 public:
     int amountOfTime(TreeNode* root, int start) {
-        map<int, vector<int>> m;
+        unordered_map<int, vector<int>> m;
         int ans = 0;
         queue<TreeNode*> q;
         q.push(root);
