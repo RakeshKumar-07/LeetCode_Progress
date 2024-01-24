@@ -25,6 +25,7 @@ public:
         if(root->left != NULL) solve(root->left, f);
         if(root->right != NULL) solve(root->right, f);
         f[root->val]--;
+        return;
     }
 
     int pseudoPalindromicPaths (TreeNode* root) {
