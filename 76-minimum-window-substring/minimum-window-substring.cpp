@@ -2,7 +2,7 @@ class Solution {
 public:
     string minWindow(string s, string t) {
         int cnt = 0, minL = INT_MAX, start = 0, idx = -1, l = 0;
-        map<char, int> hasht, hashs;
+        unordered_map<char, int> hasht, hashs;
         for(int i=0;i<t.size();i++) hasht[t[i]]++;
         
         for(int i=0;i<s.size();i++){
