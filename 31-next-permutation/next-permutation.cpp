@@ -21,6 +21,6 @@ public:
             }
         }
         swap(nums[l], nums[r]);
-        sort(nums.begin()+l+1, nums.end());
+        reverse(nums.begin()+l+1, nums.end());
     }
 };
