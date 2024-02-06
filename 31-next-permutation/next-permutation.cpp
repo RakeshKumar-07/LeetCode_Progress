@@ -4,7 +4,7 @@ public:
         vector<int> t = nums;
         sort(t.rbegin(), t.rend());
         if(nums == t) {
-            sort(nums.begin(), nums.end());
+            reverse(nums.begin(), nums.end());
             return;
         }
         int l = -1, r = -1;
