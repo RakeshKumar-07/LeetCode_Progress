@@ -8,7 +8,6 @@ public:
                 if(nums[i]%nums[j] == 0 && ans[j].size() >= ans[i].size()){
                     vector<int> t = ans[j];
                     t.push_back(nums[i]);
-                    // cout<<"Hi";
                     ans[i] = t;
                 }
             }
