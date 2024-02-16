@@ -13,16 +13,13 @@ public:
             }
         }
         m[cnt]++;
-        // cout<<unique<<endl;
         for(auto i:m){
             while(i.second > 0 && i.first <= k){
-                // cout<<i.first<<" -> "<<i.second<<endl;
                 k -= i.first;
                 unique--;
                 i.second--;
             }
         }
-        // cout<<unique<<endl;
         return unique;
     }
 };
