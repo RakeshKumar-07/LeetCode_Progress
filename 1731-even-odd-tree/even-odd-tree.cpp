@@ -22,8 +22,7 @@ public:
             while(size--){
                 TreeNode* t = q.front();
                 q.pop();
-                // cout<<it<<" -> "<<prev<<" => "<<t->val<<endl;
-                if(it%2 != t->val%2 || (t->val%2==1 && prev >= t->val) || (t->val%2==0 && prev <= t->val)) return false;
+                if(it%2 != t->val%2 || (t->val&1 && prev >= t->val) || (!(t->val&1) && prev <= t->val)) return false;
                 prev = t->val;
                 if(t->left) q.push(t->left);
                 if(t->right) q.push(t->right);
