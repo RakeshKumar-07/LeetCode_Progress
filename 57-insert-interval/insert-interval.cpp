@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-        cout.tie(NULL);
         vector<int> m(100001, 0);
         vector<bool> vis(100001, false);
         for(int i=0;i<intervals.size();i++){
