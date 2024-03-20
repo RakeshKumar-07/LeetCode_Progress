@@ -11,7 +11,6 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        // if(k == 1) return head;
         int l = 0;
         ListNode *t = head;
         while(t != NULL){
@@ -21,7 +20,6 @@ public:
         t = head;
         int m = k*(l/k);
         while(m--) t = t->next;
-        // cout<<t->val<<endl;
         ListNode *q = head, *r = head;
         for(int i=0;i<l/k;i++){
             int h = 2*k - 1;
