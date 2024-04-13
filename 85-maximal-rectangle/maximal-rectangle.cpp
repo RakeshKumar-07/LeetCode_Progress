@@ -1,7 +1,6 @@
 class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {
-        // cout<<matrix.size()<<" "<<matrix[0].size();
         int sum = 0;
         vector<vector<int>> updated(matrix.size(), vector<int>(matrix[0].size()));
         for(int i=0;i<matrix.size();i++){
