@@ -11,10 +11,8 @@ public:
             }
         }
         if(str.size() != 0) vec.push_back(str);
-        // for(int i=0;i<vec.size();i++) cout<<vec[i]<<endl;
         int ans = 0;
         if(x > y){
-            // cout<<"X: \n";
             for(int i=0;i<vec.size();i++){
                 stack<char> st, st1;
                 for(int j=0;j<vec[i].size();j++){
@@ -22,7 +20,6 @@ public:
                     else if(st.top() == 'a' && vec[i][j] == 'b'){
                         st.pop();
                         ans += x;
-                        // cout<<i<<" "<<j<<" => "<<ans<<endl;
                     }
                     else st.push(vec[i][j]);
                 }
@@ -38,7 +35,6 @@ public:
             }
         }
         else{
-            // cout<<"Y: \n";
             for(int i=0;i<vec.size();i++){
                 stack<char> st, st1;
                 for(int j=0;j<vec[i].size();j++){
@@ -46,7 +42,6 @@ public:
                     else if(st.top() == 'b' && vec[i][j] == 'a'){
                         st.pop();
                         ans += y;
-                        // cout<<i<<" "<<j<<" => "<<ans<<endl;
                     }
                     else st.push(vec[i][j]);
                 }
