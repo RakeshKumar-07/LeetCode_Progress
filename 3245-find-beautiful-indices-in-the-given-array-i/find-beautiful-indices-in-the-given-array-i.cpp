@@ -43,13 +43,11 @@ public:
 
         vector<int> idx1 = stringMatching(s, a, lps1), idx2 = stringMatching(s, b, lps2), ans;
         
+        int j = 0;
         for(int i=0;i<idx1.size();i++){
-            for(int j=0;j<idx2.size();j++){
-                if(abs(idx2[j] - idx1[i]) <= k){
-                    ans.push_back(idx1[i]);
-                    break;
-                }
-            }
+            while(j < idx2.size() && idx1[i]-idx2[j]>k) j++;
+            if(j==idx2.size()) return ans;
+            if(abs(idx1[i]-idx2[j])<=k) ans.push_back(idx1[i]);
         }
         return ans;
     }
