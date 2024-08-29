@@ -33,7 +33,7 @@ public:
 
         for(int i=0;i<stones.size();i++) s.insert(parent[i]);
 
-        for(int i=0;i<stones.size();i++) cout<<parent[i]<<endl;
+        // for(int i=0;i<stones.size();i++) cout<<parent[i]<<endl;
 
         return stones.size() - s.size();
     }
