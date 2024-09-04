@@ -6,21 +6,15 @@ public:
         map<pair<int,int>, bool> m;
         for(int i=0;i<obstacles.size();i++) m[{obstacles[i][0], obstacles[i][1]}] = true;
         for(int i=0;i<commands.size();i++){
-            
-            // cout<<x<<" : "<<y<<" => ";
-
             if(commands[i] >= 1){
                 int tx = 0, ty = 0;
-                // cout<<endl<<"============="<<endl;
                 for(int j=1;j<=commands[i];j++){
-                    // cout<<isY<<" : "<<isPos<<" : "<<j<<endl;
                     if(isY && isPos && !m[{x, y + j}]) ty = j;
                     else if(isY && !isPos && !m[{x, y - j}]) ty = -1*j;
                     else if(!isY && isPos && !m[{x + j, y}]) tx = j;
                     else if(!isY && !isPos && !m[{x - j, y}]) tx = -1*j;
                     else break;
                 }
-                // cout<<"============="<<endl;
                 x += tx;
                 y += ty;
             }
@@ -38,9 +32,6 @@ public:
                 }
                 else if(!isY) isY = !isY;
             }
-
-            // cout<<x<<" : "<<y<<endl;
-
             ans = max(ans, abs(x)*abs(x) + abs(y)*abs(y));
         }
         return ans;
