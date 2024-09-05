@@ -5,7 +5,6 @@ public:
         int sum = 0, neededSum = 0;
         for(int i=0;i<rolls.size();i++) sum += rolls[i];
         neededSum = mean*(rolls.size() + n) - sum;
-        // cout<<neededSum<<endl;
         if(neededSum < n || ((double)neededSum/6 > n)) return {};
         neededSum -= n;
         for(int i=0;i<n;i++){
