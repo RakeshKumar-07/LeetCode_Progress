@@ -23,8 +23,7 @@ public:
         ListNode *p = head, *q = head;
         while(q->next != NULL){
             q = q->next;
-            int res = gcd(p->val, q->val);
-            ListNode *t = new ListNode(res);
+            ListNode *t = new ListNode(gcd(p->val, q->val));
             p->next = t;
             t->next = q;
             p = q;
