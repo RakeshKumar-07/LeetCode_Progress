@@ -3,8 +3,12 @@ public:
     int countPalindromicSubsequence(string s) {
         vector<vector<int>> freq(s.size(), vector<int>(26, 0));
         vector<pair<int,int>> v(26, {INT_MAX, INT_MIN});
-        for(int i=0;i<s.size();i++) v[s[i] - 'a'].first = min(i, v[s[i] - 'a'].first);
-        for(int i=s.size()-1;i>=0;i--) v[s[i] - 'a'].second = max(i, v[s[i] - 'a'].second);
+        for(int i=0;i<s.size();i++){
+            v[s[i] - 'a'].first = min(i, v[s[i] - 'a'].first);
+        }
+        for(int i=s.size()-1;i>=0;i--){
+            v[s[i] - 'a'].second = max(i, v[s[i] - 'a'].second);
+        }
         for(int i=1;i<s.size();i++){
             freq[i] = freq[i-1];
             freq[i][s[i-1]-'a']++;
