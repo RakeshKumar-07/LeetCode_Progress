@@ -8,7 +8,6 @@ public:
             else dp[i] = max(ans, questions[i][0] + dp[i+questions[i][1]+1]);
             ans = max(dp[i], ans);
         }
-        // for(int i=0;i<dp.size();i++) cout<<dp[i]<<" ";
         return ans;
     }
 };
