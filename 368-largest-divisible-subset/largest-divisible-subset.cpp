@@ -19,9 +19,6 @@ public:
                 for(int j=0;j<l[k].size();j++) l[i].push_back(l[k][j]);
             }
             l[i].push_back(nums[i]);
-            // cout<<nums[i]<<" => "<<dp[i]<<" "<<l[i].size()<<"\n";
-            // for(int j=0;j<l[i].size();j++) cout<<l[i][j]<<" ";
-            // cout<<endl;
         }
         for(int i=0;i<nums.size();i++) if(ans.size() < l[i].size()) ans = l[i];
         reverse(ans.begin(), ans.end());
