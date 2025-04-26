@@ -1,16 +1,14 @@
-
 class Solution {
 public:
-    long long countSubarrays(vector<int>& nums, int minK, int maxK) {
-        long long int ans = 0;
-        int badi = -1, mini = -1, maxi = -1, n = nums.size();
-
-        for(int i=0;i<n;i++){
-            if(nums[i]  < minK || nums[i] > maxK) badi = i;
-            if(nums[i] == minK) mini = i;
-            if(nums[i] == maxK) maxi = i;
-            ans += max(0, min(mini, maxi) - badi);
+        long long countSubarrays(vector<int>& nums, int minK, int maxK) {
+        long count = 0, start = -1, mini = -1, maxi = -1;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] < minK || nums[i] > maxK) start = i;
+            if (nums[i] == maxK) maxi = i;
+            if (nums[i] == minK) mini = i;
+            int valid = max(0L, min(mini, maxi) - start);
+            count += valid;
         }
-        return ans;
+        return count;
     }
 };
