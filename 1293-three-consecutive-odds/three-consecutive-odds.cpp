@@ -1,6 +1,14 @@
 class Solution {
 public:
-    bool threeConsecutiveOdds(const vector<int>& arr) {
-        return search_n(arr.begin(), arr.end(), 3, 0,[](int a, int){ return a & 1;}) != arr.end();
+    bool threeConsecutiveOdds(vector<int>& arr) {
+        int cnt = 0;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]&1){
+                cnt++;
+                if(cnt == 3) return true;
+            }
+            else cnt = 0;
+        }
+        return false;
     }
 };
