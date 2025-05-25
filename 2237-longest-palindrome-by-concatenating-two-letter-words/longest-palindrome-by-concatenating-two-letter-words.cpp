@@ -7,7 +7,6 @@ public:
         for(auto i:m){
             string s = i.first;
             reverse(s.begin(), s.end());
-            // cout<<i.first<<" => "<<s<<" => "<<m[s]<<endl;
             if(s != i.first) ans += 2*min(i.second, m[s]);
             else if(s == i.first){
                 if(m[s]%2 == 0){
