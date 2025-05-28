@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int bfs(int node, int n, int k, unordered_map<int, vector<int>>& m){
+    int bfs(int node, int n, int k, vector<vector<int>>& m){
         vector<bool> vis(n, false);
         int ans = 0;
         queue<int> q;
@@ -25,7 +25,8 @@ public:
     }
 
     vector<int> maxTargetNodes(vector<vector<int>>& edges1, vector<vector<int>>& edges2, int k) {
-        unordered_map<int, vector<int>> m1, m2;
+        int n1 = edges1.size()+1, n2 = edges2.size()+1;
+        vector<vector<int>> m1(n1), m2(n2);
         for(int i=0;i<edges1.size();i++){
             m1[edges1[i][0]].push_back(edges1[i][1]);
             m1[edges1[i][1]].push_back(edges1[i][0]);
@@ -34,7 +35,6 @@ public:
             m2[edges2[i][0]].push_back(edges2[i][1]);
             m2[edges2[i][1]].push_back(edges2[i][0]);
         }
-        int n1 = m1.size(), n2 = m2.size();
         int add = 0;
         for(int i=0;i<n2;i++) add = max(add, bfs(i, n2, k-1, m2));
         vector<int> ans;
