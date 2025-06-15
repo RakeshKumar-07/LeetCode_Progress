@@ -18,7 +18,6 @@ public:
                     v[i] = true;
                 }
             }
-            // cout<<c<<" hi"<<endl;
         }
         else{
             for(int i=0;i<v.size();i++){
@@ -39,11 +38,9 @@ public:
                 }
             }
             if(c != '1') for(int i=0;i<s.size();i++) if(s[i] == c) s[i] = '0';
-            cout<<c<<" hi"<<endl;
         }
         else for(int i=0;i<v.size();i++) if(s[i] == c) s[i] = '1';
         mini = stoi(s);
-        cout<<maxi<<" -> "<<mini<<endl;
         return maxi - mini;
     }
 };
